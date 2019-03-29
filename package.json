@@ -2,21 +2,29 @@
   "name": "twitch-extension-analyze",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://albericod.github.io/twitch-extension-analyze",
   "dependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.12.1",
     "@types/react": "16.8.10",
     "@types/react-dom": "16.8.3",
+    "antd": "^3.15.2",
+    "babel-plugin-import": "^1.11.0",
+    "customize-cra": "^0.2.12",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
+    "react-app-rewired": "^2.1.1",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "typescript": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
