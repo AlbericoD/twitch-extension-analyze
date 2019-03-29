@@ -1,0 +1,14 @@
+{
+  "main.css": "/twitch-extension-analyze/static/css/main.3d41eb91.chunk.css",
+  "main.js": "/twitch-extension-analyze/static/js/main.a3f528ea.chunk.js",
+  "main.js.map": "/twitch-extension-analyze/static/js/main.a3f528ea.chunk.js.map",
+  "runtime~main.js": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js",
+  "runtime~main.js.map": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js.map",
+  "static/js/2.4b44abd2.chunk.js": "/twitch-extension-analyze/static/js/2.4b44abd2.chunk.js",
+  "static/js/2.4b44abd2.chunk.js.map": "/twitch-extension-analyze/static/js/2.4b44abd2.chunk.js.map",
+  "index.html": "/twitch-extension-analyze/index.html",
+  "precache-manifest.04ae0b1a8132a130a5d9c7eb48624950.js": "/twitch-extension-analyze/precache-manifest.04ae0b1a8132a130a5d9c7eb48624950.js",
+  "service-worker.js": "/twitch-extension-analyze/service-worker.js",
+  "static/css/main.3d41eb91.chunk.css.map": "/twitch-extension-analyze/static/css/main.3d41eb91.chunk.css.map",
+  "static/media/logo.svg": "/twitch-extension-analyze/static/media/logo.5d5d9eef.svg"
+}
