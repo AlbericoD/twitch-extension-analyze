@@ -1,14 +1,52 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.ant-statistic-title {
+  font-weight: 600;
+}
+
+input[type='file'] {
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.label {
+  width: '100%';
+  border: 2px dashed grey;
+  border-radius: 5px;
+  display: block;
+  padding: 0.4em;
+  transition: border 300ms ease;
+  cursor: pointer;
+  text-align: center;
+}
+.label i {
+  display: block;
+  font-size: 42px;
+  padding-bottom: 16px;
+}
+.label i,
+.label .title {
+  color: grey;
+  transition: 200ms color;
+}
+.label:hover {
+  border: 2px solid black;
+}
+.label:hover i,
+.label:hover .title {
+  color: black;
+}
+.recharts-legend-item-text {
+  color: #898395;
 }
