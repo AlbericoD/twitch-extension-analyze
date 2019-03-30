@@ -1,15 +1,15 @@
 {
-  "main.css": "/twitch-extension-analyze/static/css/main.d605772b.chunk.css",
-  "main.js": "/twitch-extension-analyze/static/js/main.70b46af1.chunk.js",
-  "main.js.map": "/twitch-extension-analyze/static/js/main.70b46af1.chunk.js.map",
+  "main.css": "/twitch-extension-analyze/static/css/main.7f3dfe31.chunk.css",
+  "main.js": "/twitch-extension-analyze/static/js/main.913a77cc.chunk.js",
+  "main.js.map": "/twitch-extension-analyze/static/js/main.913a77cc.chunk.js.map",
   "runtime~main.js": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js",
   "runtime~main.js.map": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js.map",
   "static/css/2.a0fbce7c.chunk.css": "/twitch-extension-analyze/static/css/2.a0fbce7c.chunk.css",
-  "static/js/2.caed6a17.chunk.js": "/twitch-extension-analyze/static/js/2.caed6a17.chunk.js",
-  "static/js/2.caed6a17.chunk.js.map": "/twitch-extension-analyze/static/js/2.caed6a17.chunk.js.map",
+  "static/js/2.aaa8024b.chunk.js": "/twitch-extension-analyze/static/js/2.aaa8024b.chunk.js",
+  "static/js/2.aaa8024b.chunk.js.map": "/twitch-extension-analyze/static/js/2.aaa8024b.chunk.js.map",
   "index.html": "/twitch-extension-analyze/index.html",
-  "precache-manifest.c7a58f8af245d25c8e95ce28e75d9e68.js": "/twitch-extension-analyze/precache-manifest.c7a58f8af245d25c8e95ce28e75d9e68.js",
+  "precache-manifest.5b2694fb0298e05cd2762637f4a78e60.js": "/twitch-extension-analyze/precache-manifest.5b2694fb0298e05cd2762637f4a78e60.js",
   "service-worker.js": "/twitch-extension-analyze/service-worker.js",
   "static/css/2.a0fbce7c.chunk.css.map": "/twitch-extension-analyze/static/css/2.a0fbce7c.chunk.css.map",
-  "static/css/main.d605772b.chunk.css.map": "/twitch-extension-analyze/static/css/main.d605772b.chunk.css.map"
+  "static/css/main.7f3dfe31.chunk.css.map": "/twitch-extension-analyze/static/css/main.7f3dfe31.chunk.css.map"
 }
