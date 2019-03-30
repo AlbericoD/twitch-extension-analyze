@@ -1,16 +1,15 @@
 {
-  "main.css": "/twitch-extension-analyze/static/css/main.3d41eb91.chunk.css",
-  "main.js": "/twitch-extension-analyze/static/js/main.12f3ad40.chunk.js",
-  "main.js.map": "/twitch-extension-analyze/static/js/main.12f3ad40.chunk.js.map",
+  "main.css": "/twitch-extension-analyze/static/css/main.d605772b.chunk.css",
+  "main.js": "/twitch-extension-analyze/static/js/main.70b46af1.chunk.js",
+  "main.js.map": "/twitch-extension-analyze/static/js/main.70b46af1.chunk.js.map",
   "runtime~main.js": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js",
   "runtime~main.js.map": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js.map",
-  "static/css/2.21c3e04e.chunk.css": "/twitch-extension-analyze/static/css/2.21c3e04e.chunk.css",
-  "static/js/2.5c4d8069.chunk.js": "/twitch-extension-analyze/static/js/2.5c4d8069.chunk.js",
-  "static/js/2.5c4d8069.chunk.js.map": "/twitch-extension-analyze/static/js/2.5c4d8069.chunk.js.map",
+  "static/css/2.a0fbce7c.chunk.css": "/twitch-extension-analyze/static/css/2.a0fbce7c.chunk.css",
+  "static/js/2.caed6a17.chunk.js": "/twitch-extension-analyze/static/js/2.caed6a17.chunk.js",
+  "static/js/2.caed6a17.chunk.js.map": "/twitch-extension-analyze/static/js/2.caed6a17.chunk.js.map",
   "index.html": "/twitch-extension-analyze/index.html",
-  "precache-manifest.4d260fcf7ddbfbb03f50541c203c0975.js": "/twitch-extension-analyze/precache-manifest.4d260fcf7ddbfbb03f50541c203c0975.js",
+  "precache-manifest.c7a58f8af245d25c8e95ce28e75d9e68.js": "/twitch-extension-analyze/precache-manifest.c7a58f8af245d25c8e95ce28e75d9e68.js",
   "service-worker.js": "/twitch-extension-analyze/service-worker.js",
-  "static/css/2.21c3e04e.chunk.css.map": "/twitch-extension-analyze/static/css/2.21c3e04e.chunk.css.map",
-  "static/css/main.3d41eb91.chunk.css.map": "/twitch-extension-analyze/static/css/main.3d41eb91.chunk.css.map",
-  "static/media/logo.svg": "/twitch-extension-analyze/static/media/logo.5d5d9eef.svg"
+  "static/css/2.a0fbce7c.chunk.css.map": "/twitch-extension-analyze/static/css/2.a0fbce7c.chunk.css.map",
+  "static/css/main.d605772b.chunk.css.map": "/twitch-extension-analyze/static/css/main.d605772b.chunk.css.map"
 }
