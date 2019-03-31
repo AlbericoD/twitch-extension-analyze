@@ -1,15 +1,15 @@
 {
-  "main.css": "/twitch-extension-analyze/static/css/main.7f3dfe31.chunk.css",
-  "main.js": "/twitch-extension-analyze/static/js/main.bb99e5d9.chunk.js",
-  "main.js.map": "/twitch-extension-analyze/static/js/main.bb99e5d9.chunk.js.map",
+  "main.css": "/twitch-extension-analyze/static/css/main.ccbccd95.chunk.css",
+  "main.js": "/twitch-extension-analyze/static/js/main.0adb901e.chunk.js",
+  "main.js.map": "/twitch-extension-analyze/static/js/main.0adb901e.chunk.js.map",
   "runtime~main.js": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js",
   "runtime~main.js.map": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js.map",
-  "static/css/2.4a3dce98.chunk.css": "/twitch-extension-analyze/static/css/2.4a3dce98.chunk.css",
-  "static/js/2.6ecc039f.chunk.js": "/twitch-extension-analyze/static/js/2.6ecc039f.chunk.js",
-  "static/js/2.6ecc039f.chunk.js.map": "/twitch-extension-analyze/static/js/2.6ecc039f.chunk.js.map",
+  "static/css/2.faf8f624.chunk.css": "/twitch-extension-analyze/static/css/2.faf8f624.chunk.css",
+  "static/js/2.cf60c4eb.chunk.js": "/twitch-extension-analyze/static/js/2.cf60c4eb.chunk.js",
+  "static/js/2.cf60c4eb.chunk.js.map": "/twitch-extension-analyze/static/js/2.cf60c4eb.chunk.js.map",
   "index.html": "/twitch-extension-analyze/index.html",
-  "precache-manifest.bb7797b8bc5283223fc1c78e14a9a6cf.js": "/twitch-extension-analyze/precache-manifest.bb7797b8bc5283223fc1c78e14a9a6cf.js",
+  "precache-manifest.9f3b2874ed5a116f5cf2169f222f2619.js": "/twitch-extension-analyze/precache-manifest.9f3b2874ed5a116f5cf2169f222f2619.js",
   "service-worker.js": "/twitch-extension-analyze/service-worker.js",
-  "static/css/2.4a3dce98.chunk.css.map": "/twitch-extension-analyze/static/css/2.4a3dce98.chunk.css.map",
-  "static/css/main.7f3dfe31.chunk.css.map": "/twitch-extension-analyze/static/css/main.7f3dfe31.chunk.css.map"
+  "static/css/2.faf8f624.chunk.css.map": "/twitch-extension-analyze/static/css/2.faf8f624.chunk.css.map",
+  "static/css/main.ccbccd95.chunk.css.map": "/twitch-extension-analyze/static/css/main.ccbccd95.chunk.css.map"
 }
