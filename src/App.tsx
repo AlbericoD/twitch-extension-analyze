@@ -24,20 +24,16 @@ class App extends Component<{}, IState> {
     };
   }
   csvJSON(csv: string): ITwitchExtensionPrimitiveCSV[] {
-    let lines = csv.split('\n');
-
+    const lines = csv.split('\n');
+    const headers = lines[0].split(',');
     let result: ITwitchExtensionPrimitiveCSV[] = [];
-
-    let headers = lines[0].split(',');
 
     for (let i = 1; i < lines.length - 1; i++) {
       let obj: any = {};
       let currentline = lines[i].split(',');
-
       for (let j = 0; j < headers.length; j++) {
         if (currentline[j] !== undefined && currentline[j] !== '') obj[headers[j]] = currentline[j];
       }
-
       result.push(obj);
     }
     return result;

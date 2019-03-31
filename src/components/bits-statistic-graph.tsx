@@ -28,13 +28,14 @@ const makeData = (csv: ITwitchExtensionPrimitiveCSV[]): IDataBitsStatistic[] => 
       return bits;
     }
   });
+  data.reverse();
   return data;
 };
 
 interface IProps {
   data: ITwitchExtensionPrimitiveCSV[];
 }
-export const StatisticBits = ({ data }: IProps) => (
+export const StatisticBitsGraph = ({ data }: IProps) => (
   <ResponsiveContainer width='100%' aspect={2.0 / 1.0}>
     <ComposedChart data={makeData(data)}>
       <CartesianGrid stroke='#f5f5f5' />

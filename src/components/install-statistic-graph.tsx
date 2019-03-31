@@ -25,12 +25,13 @@ const makeData = (csv: ITwitchExtensionPrimitiveCSV[]): IDataInstalls[] => {
       return item;
     }
   });
+  data.reverse();
   return data;
 };
 interface IProps {
   data: ITwitchExtensionPrimitiveCSV[];
 }
-export const StatisticInstall = ({ data }: IProps): JSX.Element => (
+export const StatisticInstallGraph = ({ data }: IProps): JSX.Element => (
   <ResponsiveContainer width='100%' aspect={2.0 / 1.0}>
     <BarChart data={makeData(data)}>
       <CartesianGrid strokeDasharray='3 3' />

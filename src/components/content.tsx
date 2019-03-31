@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
 import { StatisticsTopPanel } from './statistics-top-panel';
 import { StatisticsPanelInstall } from './statistics-panel-install';
 import { StatisticsPanelBits } from './statistics-panel-bits';
-import { StatisticInstall } from './install-statistic';
-import { StatisticBits } from './bits-statistic';
+import { StatisticInstallGraph } from './install-statistic-graph';
+import { StatisticBitsGraph } from './bits-statistic-graph';
 import { ITwitchExtensionPrimitiveCSV } from './types';
 import { cardBody, statisticStyle, gridStyle, gridStyleStatisc } from './style';
 
@@ -18,12 +18,12 @@ export const ContentBox = ({ csv }: IProps): JSX.Element => (
     </Card.Grid>
     <Card.Grid style={gridStyle}>
       <StatisticsPanelInstall cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticInstall data={csv} />
+        <StatisticInstallGraph data={csv} />
       </StatisticsPanelInstall>
     </Card.Grid>
     <Card.Grid style={gridStyle}>
       <StatisticsPanelBits cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticBits data={csv} />
+        <StatisticBitsGraph data={csv} />
       </StatisticsPanelBits>
     </Card.Grid>
   </Card>
