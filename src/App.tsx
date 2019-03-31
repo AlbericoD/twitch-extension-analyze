@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { ImportTwitchCSV, ContentBox, ITwitchExtensionPrimitiveCSV } from './components/index';
-import { Layout, Icon } from 'antd';
+import { Layout, Icon, DatePicker, Row, Col, PageHeader } from 'antd';
+import moment, { Moment } from 'moment';
+import { RangePickerPresetRange } from 'antd/lib/date-picker/interface';
 
 const { Header, Content } = Layout;
-
+const { RangePicker } = DatePicker;
+const dateFormat = 'YYYY/MM/DD';
+interface IRange {
+  [range: string]: RangePickerPresetRange;
+}
 interface IState {
   fileReader: FileReader;
   uploadCSV: boolean;
   load: boolean;
   csv: ITwitchExtensionPrimitiveCSV[] | null;
   name: string;
+  initialDateIndex: number;
+  lastDateIndex: number;
 }
 class App extends Component<{}, IState> {
   state: IState;
@@ -20,7 +28,9 @@ class App extends Component<{}, IState> {
       uploadCSV: false,
       load: false,
       csv: null,
-      name: 'Extension Name'
+      name: 'Extension Name',
+      initialDateIndex: 0,
+      lastDateIndex: 0
     };
   }
   csvJSON(csv: string): ITwitchExtensionPrimitiveCSV[] {
@@ -42,9 +52,13 @@ class App extends Component<{}, IState> {
     if (typeof this.state.fileReader.result === 'string') {
       const content: string = this.state.fileReader.result;
       this.setState({ csv: this.csvJSON(content) }, () => {
-        this.state.csv !== null
-          ? this.setState({ name: this.state.csv[0]['Extension Name'] })
-          : null;
+        if (this.state.csv !== null) {
+          this.setState({
+            name: this.state.csv[0]['Extension Name'],
+            initialDateIndex: this.setState.length - 1,
+            lastDateIndex: 0
+          });
+        }
       });
     }
   };
@@ -55,8 +69,46 @@ class App extends Component<{}, IState> {
       this.state.fileReader.readAsText(file);
     });
   };
+  makeRanges = (data: ITwitchExtensionPrimitiveCSV[]): IRange => {
+    if (data.length >= 0 && data.length <= 6) {
+      return {
+        'First Extension Release - Last Date CSV': [
+          moment(data[data.length - 1].Date, dateFormat),
+          moment(data[0].Date, dateFormat)
+        ],
+        'Last 7 Days': [moment(data[6].Date, dateFormat), moment(data[0].Date, dateFormat)]
+      };
+    } else if (data.length >= 0 && data.length >= 29) {
+      return {
+        'First Extension Release - Last Date CSV': [
+          moment(data[data.length - 1].Date, dateFormat),
+          moment(data[0].Date, dateFormat)
+        ],
+        'Last 7 Days': [moment(data[6].Date, dateFormat), moment(data[0].Date, dateFormat)],
+        'Last 30 Days': [moment(data[29].Date, dateFormat), moment(data[0].Date, dateFormat)]
+      };
+    } else {
+      return {
+        'First Extension Release - Last Date CSV': [
+          moment(data[data.length - 1].Date, dateFormat),
+          moment(data[0].Date, dateFormat)
+        ]
+      };
+    }
+  };
 
+  parseDateToIndex = (dates: Moment[]) => {
+    const { csv } = this.state;
+    if (csv !== null && dates.length === 2) {
+      dates.forEach((date, ind) => {
+        const index = csv.findIndex(item => item.Date === date.format('YYYY-MM-DD'));
+        if (index !== -1 && ind === 0) this.setState({ initialDateIndex: index });
+        if (index !== -1 && ind === 1) this.setState({ lastDateIndex: index });
+      });
+    }
+  };
   render() {
+    const { csv, initialDateIndex, lastDateIndex } = this.state;
     return (
       <Layout>
         <Header
@@ -74,8 +126,44 @@ class App extends Component<{}, IState> {
           </h1>
         </Header>
         <Content>
-          <ImportTwitchCSV handleFileChosen={this.handleFileChosen} />
-          {this.state.csv !== null ? <ContentBox csv={this.state.csv} /> : 'Please Upload CSV'}
+          <Row gutter={16}>
+            <Col span={12}>
+              <PageHeader
+                title='CSV File'
+                subTitle={<ImportTwitchCSV handleFileChosen={this.handleFileChosen} />}
+              />
+            </Col>
+            <Col span={12}>
+              <PageHeader
+                title='Graph Range Date'
+                subTitle={
+                  csv !== null ? (
+                    <RangePicker
+                      defaultValue={[
+                        moment(csv[csv.length - 1].Date, dateFormat),
+                        moment(csv[0].Date, dateFormat)
+                      ]}
+                      ranges={this.makeRanges(csv)}
+                      format={dateFormat}
+                      size={'large'}
+                      onChange={(e: any) => this.parseDateToIndex(e)}
+                    />
+                  ) : (
+                    'Please, Upload CSV'
+                  )
+                }
+              />
+            </Col>
+            <Col span={24}>
+              {csv !== null ? (
+                <ContentBox
+                  csv={csv}
+                  initialDateIndex={initialDateIndex}
+                  lastDateIndex={lastDateIndex}
+                />
+              ) : null}
+            </Col>
+          </Row>
         </Content>
       </Layout>
     );

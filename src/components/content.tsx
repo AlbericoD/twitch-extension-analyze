@@ -10,20 +10,30 @@ import { cardBody, statisticStyle, gridStyle, gridStyleStatisc } from './style';
 
 interface IProps {
   csv: ITwitchExtensionPrimitiveCSV[];
+  initialDateIndex: number;
+  lastDateIndex: number;
 }
-export const ContentBox = ({ csv }: IProps): JSX.Element => (
+export const ContentBox = ({ csv, initialDateIndex, lastDateIndex }: IProps): JSX.Element => (
   <Card style={cardBody}>
     <Card.Grid style={gridStyleStatisc}>
       <StatisticsTopPanel css={statisticStyle} value={csv[0]} />
     </Card.Grid>
     <Card.Grid style={gridStyle}>
       <StatisticsPanelInstall cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticInstallGraph data={csv} />
+        <StatisticInstallGraph
+          data={csv}
+          initialDateIndex={initialDateIndex}
+          lastDateIndex={lastDateIndex}
+        />
       </StatisticsPanelInstall>
     </Card.Grid>
     <Card.Grid style={gridStyle}>
       <StatisticsPanelBits cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticBitsGraph data={csv} />
+        <StatisticBitsGraph
+          data={csv}
+          initialDateIndex={initialDateIndex}
+          lastDateIndex={lastDateIndex}
+        />
       </StatisticsPanelBits>
     </Card.Grid>
   </Card>
