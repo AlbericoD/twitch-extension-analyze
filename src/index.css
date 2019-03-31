@@ -17,7 +17,7 @@ code {
 
 input[type='file'] {
   outline: 0;
-  opacity: 0;
+  /* opacity: 0; */
   pointer-events: none;
   user-select: none;
 }
@@ -65,4 +65,12 @@ th {
 .ant-layout-header,
 .ant-menu-dark {
   background: #0f0e11 !important;
+}
+.load-csv {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 250px 0;
 }
