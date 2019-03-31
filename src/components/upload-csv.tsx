@@ -1,9 +1,5 @@
 import React from 'react';
-import { Input, Icon, Statistic, Row, Col, Button } from 'antd';
-import { ITwitchExtensionPrimitiveCSV, ITwitchExtensionRealCSV } from './types';
-const sumBits = (arr: number[]): number => {
-  return arr.reduce((prev, next) => prev + next);
-};
+import { Input, Icon, Row, Col } from 'antd';
 
 interface IProps {
   handleFileChosen(event: any): void;
@@ -26,12 +22,3 @@ export const ImportTwitchCSV = ({ handleFileChosen }: IProps) => {
     </Row>
   );
 };
-//   <Col span={12}>
-//     <Statistic title='Active Users' value={112893} />
-//   </Col>
-//   <Col span={12}>
-//     <Statistic title='Bits Revenue Balance (USD)' value={112893} precision={2} />
-//     <Statistic title='Bits Used (QTd)' value={112893} precision={2} />
-//     <Statistic title='Bits Transactions (Bits)' value={112893} precision={2} />
-//     <Statistic title='Bits Revenue Balance (USD)' value={112893} precision={2} />
-//   </Col>
