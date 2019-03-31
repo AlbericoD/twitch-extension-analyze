@@ -20,6 +20,7 @@ interface IState {
   initialDateIndex: number;
   lastDateIndex: number;
   collapsed: boolean;
+  menu: string;
 }
 class App extends Component<{}, IState> {
   state: IState;
@@ -33,7 +34,8 @@ class App extends Component<{}, IState> {
       name: 'Extension Name',
       initialDateIndex: 0,
       lastDateIndex: 0,
-      collapsed: false
+      collapsed: false,
+      menu: '1'
     };
   }
   csvJSON(csv: string): ITwitchExtensionPrimitiveCSV[] {
@@ -69,6 +71,10 @@ class App extends Component<{}, IState> {
     this.setState({
       collapsed: !this.state.collapsed
     });
+  };
+  handleClick = (e: any) => {
+    console.log('click', e);
+    this.setState({ menu: e.key });
   };
   handleFileChosen = (file: any) => {
     this.setState({ load: true }, () => {
@@ -115,7 +121,7 @@ class App extends Component<{}, IState> {
     }
   };
   render() {
-    const { csv, initialDateIndex, lastDateIndex } = this.state;
+    const { csv, initialDateIndex, lastDateIndex, menu } = this.state;
     return (
       <Layout>
         <Sider
@@ -134,7 +140,7 @@ class App extends Component<{}, IState> {
               <Icon type='github' style={{ color: '#fff', fontSize: '1.5em', margin: '5px 6px' }} />
             </a>
           </div>
-          <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
+          <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']} onClick={this.handleClick}>
             <Menu.Item
               key='1'
               style={{
@@ -146,44 +152,73 @@ class App extends Component<{}, IState> {
             </Menu.Item>
             <Menu.Item
               key='2'
-              disabled
               style={{
                 background: '#6441a4',
                 border: '1px solid hsla(0,0%,100%,.09)'
               }}>
-              <Icon type='video-camera' />
-              <span>Graph Detail 1 </span>
+              <Icon type='bar-chart' />
+              <span>Installations Graph </span>
             </Menu.Item>
             <Menu.Item
               key='3'
-              disabled
               style={{
                 background: '#6441a4',
                 border: '1px solid hsla(0,0%,100%,.09)'
               }}>
-              <Icon type='upload' />
-              <span>Graph Detail 2</span>
+              <Icon type='line-chart' />
+              <span>Monetization Graph</span>
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout>
-          <Header
-            style={{
-              background: '#6441a4'
-            }}>
-            <h1 style={{ color: '#fff' }}>
+        <Layout style={{ padding: '0 0 24px' }}>
+          {/* <h1 style={{ color: '#fff' }}>
               <Icon
                 className='trigger'
                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                 onClick={this.toggle}
-                style={{ color: '#fff', fontSize: '1.5em', marginTop: 10, marginRight: 100 }}
+                style={{
+                  color: '#fff',
+                  fontSize: '1.5em',
+                  marginTop: 10,
+                  marginRight: 20,
+                  marginLeft: -30
+                }}
               />
               &nbsp;&nbsp;Extension Overview: {this.state.name}
-            </h1>
+            </h1> */}
+          <Header className='header'>
+            {/* <div className='logo' /> */}
+            <Menu
+              theme='light'
+              mode='horizontal'
+              defaultSelectedKeys={['2']}
+              style={{ lineHeight: '64px' }}>
+              <Menu.Item key='1'>
+                <PageHeader
+                  title='CSV File'
+                  subTitle={<ImportTwitchCSV handleFileChosen={this.handleFileChosen} />}
+                />
+              </Menu.Item>
+              {csv !== null ? (
+                <Menu.Item key='2'>
+                  <RangePicker
+                    defaultValue={[
+                      moment(csv[csv.length - 1].Date, dateFormat),
+                      moment(csv[0].Date, dateFormat)
+                    ]}
+                    ranges={this.makeRanges(csv)}
+                    format={dateFormat}
+                    size={'large'}
+                    onChange={(e: any) => this.parseDateToIndex(e)}
+                    disabled={csv === null}
+                  />
+                </Menu.Item>
+              ) : null}
+            </Menu>
           </Header>
           <Content>
             <Row gutter={16}>
-              <Col span={12}>
+              {/* <Col span={12}>
                 <PageHeader
                   title='CSV File'
                   subTitle={<ImportTwitchCSV handleFileChosen={this.handleFileChosen} />}
@@ -209,17 +244,18 @@ class App extends Component<{}, IState> {
                     )
                   }
                 />
-              </Col>
+              </Col> */}
               <Col span={24}>
                 {csv !== null ? (
                   <ContentBox
+                    menu={menu}
                     csv={csv}
                     initialDateIndex={initialDateIndex}
                     lastDateIndex={lastDateIndex}
                   />
                 ) : (
                   <Empty
-                    style={{ height: '75vh' }}
+                    style={{ height: '75vh', margin: 20, padding: 30 }}
                     description={<span>Please click the button above to import your CSV file</span>}
                   />
                 )}

@@ -25,3 +25,10 @@ export const gridStyleStatisc: CSSProperties = {
 export const statisticStyle: CSSProperties = {
   color: '#faf9fa'
 };
+export const graphCardStyle: CSSProperties = {
+  margin: 1,
+  paddingTop: 1,
+  border: '1px solid hsla(0,0%,100%,.09)',
+  boxShadow:
+    '0 2px 4px -1px hsla(0,0%,100%,.05),0 2px 2px -2px hsla(0,0%,100%,.05),0 1px 4px 0 hsla(0,0%,100%,.05)'
+};

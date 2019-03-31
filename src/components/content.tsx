@@ -6,35 +6,76 @@ import { StatisticsPanelBits } from './statistics-panel-bits';
 import { StatisticInstallGraph } from './install-statistic-graph';
 import { StatisticBitsGraph } from './bits-statistic-graph';
 import { ITwitchExtensionPrimitiveCSV } from './types';
-import { cardBody, statisticStyle, gridStyle, gridStyleStatisc } from './style';
+import { cardBody, statisticStyle, gridStyle, gridStyleStatisc, graphCardStyle } from './style';
 
 interface IProps {
   csv: ITwitchExtensionPrimitiveCSV[];
   initialDateIndex: number;
   lastDateIndex: number;
+  menu: string;
 }
-export const ContentBox = ({ csv, initialDateIndex, lastDateIndex }: IProps): JSX.Element => (
-  <Card style={cardBody}>
-    <Card.Grid style={gridStyleStatisc}>
-      <StatisticsTopPanel css={statisticStyle} value={csv[0]} />
-    </Card.Grid>
-    <Card.Grid style={gridStyle}>
-      <StatisticsPanelInstall cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticInstallGraph
-          data={csv}
-          initialDateIndex={initialDateIndex}
-          lastDateIndex={lastDateIndex}
-        />
-      </StatisticsPanelInstall>
-    </Card.Grid>
-    <Card.Grid style={gridStyle}>
-      <StatisticsPanelBits cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticBitsGraph
-          data={csv}
-          initialDateIndex={initialDateIndex}
-          lastDateIndex={lastDateIndex}
-        />
-      </StatisticsPanelBits>
-    </Card.Grid>
-  </Card>
-);
+const panels = ({ csv, initialDateIndex, lastDateIndex, menu }: IProps): JSX.Element => {
+  switch (menu) {
+    case '2':
+      return (
+        <Card style={graphCardStyle}>
+          <Card.Grid style={{ width: '100%', padding: 3 }}>
+            <StatisticsPanelInstall
+              cardCss={gridStyleStatisc}
+              statisticCss={statisticStyle}
+              csv={csv}>
+              <StatisticInstallGraph
+                data={csv}
+                initialDateIndex={initialDateIndex}
+                lastDateIndex={lastDateIndex}
+              />
+            </StatisticsPanelInstall>
+          </Card.Grid>
+        </Card>
+      );
+    case '3':
+      return (
+        <Card style={graphCardStyle}>
+          <Card.Grid style={{ width: '100%', padding: 3 }}>
+            <StatisticsPanelBits cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
+              <StatisticBitsGraph
+                data={csv}
+                initialDateIndex={initialDateIndex}
+                lastDateIndex={lastDateIndex}
+              />
+            </StatisticsPanelBits>
+          </Card.Grid>
+        </Card>
+      );
+    default:
+      return (
+        <Card style={cardBody}>
+          <Card.Grid style={gridStyleStatisc}>
+            <StatisticsTopPanel css={statisticStyle} value={csv[0]} />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <StatisticsPanelInstall
+              cardCss={gridStyleStatisc}
+              statisticCss={statisticStyle}
+              csv={csv}>
+              <StatisticInstallGraph
+                data={csv}
+                initialDateIndex={initialDateIndex}
+                lastDateIndex={lastDateIndex}
+              />
+            </StatisticsPanelInstall>
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <StatisticsPanelBits cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
+              <StatisticBitsGraph
+                data={csv}
+                initialDateIndex={initialDateIndex}
+                lastDateIndex={lastDateIndex}
+              />
+            </StatisticsPanelBits>
+          </Card.Grid>
+        </Card>
+      );
+  }
+};
+export const ContentBox = (props: IProps): JSX.Element => panels(props);
