@@ -57,18 +57,21 @@ class App extends Component<{}, IState> {
     if (typeof this.state.fileReader.result === 'string') {
       const content: string = this.state.fileReader.result;
       this.setState({ csv: this.csvJSON(content) }, () => {
-        setTimeout(() => {
-          if (this.state.csv !== null) {
-            this.setState(
-              {
-                name: this.state.csv[0]['Extension Name'],
-                initialDateIndex: this.state.csv.length - 1,
-                lastDateIndex: 0
-              },
-              () => this.setState({ load: false })
-            );
-          }
-        }, 1000);
+        setTimeout(
+          () => {
+            if (this.state.csv !== null) {
+              this.setState(
+                {
+                  name: this.state.csv[0]['Extension Name'],
+                  initialDateIndex: this.state.csv.length - 1,
+                  lastDateIndex: 0
+                },
+                () => this.setState({ load: false })
+              );
+            }
+          },
+          this.state.csv !== null ? this.state.csv.length * 2 : 2
+        );
       });
     }
   };
@@ -78,7 +81,14 @@ class App extends Component<{}, IState> {
     });
   };
   handleClick = (e: any) => {
-    this.setState({ menu: e.key });
+    this.setState({ menu: e.key, load: true }, () =>
+      setTimeout(
+        () => {
+          this.setState({ load: false });
+        },
+        this.state.csv !== null ? this.state.csv.length : 2
+      )
+    );
   };
   handleFileChosen = (file: any) => {
     this.setState({ load: true }, () => {
@@ -180,7 +190,7 @@ class App extends Component<{}, IState> {
             mode='horizontal'
             defaultSelectedKeys={['2']}
             style={{ lineHeight: '64px' }}>
-            <Menu.Item key='collap'>
+            {/* <Menu.Item key='collap'>
               <Icon
                 className='trigger'
                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
@@ -190,7 +200,7 @@ class App extends Component<{}, IState> {
                   fontSize: '1.5em'
                 }}
               />
-            </Menu.Item>
+            </Menu.Item> */}
 
             <Menu.Item key='0'>
               <PageHeader title='Extension: ' subTitle={this.state.name} />
