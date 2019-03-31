@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-  ImportTwitchCSV,
-  StatisticInstall,
-  ContentBox,
-  ITwitchExtensionPrimitiveCSV
-} from './components/index';
+import { ImportTwitchCSV, ContentBox, ITwitchExtensionPrimitiveCSV } from './components/index';
 import { Layout, Icon } from 'antd';
 
 const { Header, Content } = Layout;
@@ -55,28 +50,6 @@ class App extends Component<{}, IState> {
           ? this.setState({ name: this.state.csv[0]['Extension Name'] })
           : null;
       });
-      // const total = data
-      //   .map(item => parseFloat(item['Bits Revenue USD']))
-      //   .reduce((prev, next) => prev + next);
-      // const install = data
-      //   .map(item => parseFloat(item.Installs))
-      //   .reduce((prev, next) => prev + next);
-      // const desinstall = data
-      //   .map(item => parseFloat(item.Uninstalls))
-      //   .reduce((prev, next) => prev + next);
-
-      // const ac = data
-      //   .map(item => parseFloat(item['Unique Active Channels']))
-      //   .reduce((prev, next) => prev + next);
-
-      // const at = data.map(item => parseFloat(item.Activations)).reduce((prev, next) => prev + next);
-
-      // console.log('Total => ', total);
-      // console.log('Install => ', install);
-      // console.log('Unistall => ', desinstall);
-      // console.log('AVG Instalation => ', install - desinstall);
-      // console.log('Unique Active Channels => ', ac);
-      // console.log('Activations => ', at);
     }
   };
 

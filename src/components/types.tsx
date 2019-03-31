@@ -1,4 +1,5 @@
 export interface ITwitchExtensionPrimitiveCSV {
+  [key: string]: string | number;
   Date: string;
   'Extension Name': string;
   'Extension Client ID': string;
@@ -109,4 +110,10 @@ export interface IDataInstalls {
   install: number;
   uninstalls: number;
   activations: number;
+}
+export interface IStatistic {
+  [key: string]: string | number;
+  title: string;
+  precision: number;
+  icon: string;
 }
