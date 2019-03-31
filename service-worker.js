@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/twitch-extension-analyze/precache-manifest.419767a2a1ea5cf202b10cea3653a373.js"
+  "/twitch-extension-analyze/precache-manifest.6ff476ca11732f623ce1d1af0033ff2e.js"
 );
 
 workbox.clientsClaim();
