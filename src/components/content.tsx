@@ -1,13 +1,14 @@
 import React from 'react';
-import { Card, Button } from 'antd';
+import { Card, Row, Col } from 'antd';
 import { StatisticsTopPanel } from './statistics-top-panel';
 import { StatisticsPanelInstall } from './statistics-panel-install';
+import { StatisticsPanelIteration } from './statistics-panel-iteration';
 import { StatisticsPanelBits } from './statistics-panel-bits';
 import { StatisticInstallGraph } from './install-statistic-graph';
+import { StatisticIteractionGraph } from './statistics-panel-iteration-graph';
 import { StatisticBitsGraph } from './bits-statistic-graph';
 import { ITwitchExtensionPrimitiveCSV } from './types';
 import { cardBody, statisticStyle, gridStyle, gridStyleStatisc, graphCardStyle } from './style';
-
 interface IProps {
   csv: ITwitchExtensionPrimitiveCSV[];
   initialDateIndex: number;
@@ -47,6 +48,24 @@ const panels = ({ csv, initialDateIndex, lastDateIndex, menu }: IProps): JSX.Ele
           </Card.Grid>
         </Card>
       );
+    case '4':
+      return (
+        <Card style={graphCardStyle}>
+          <Card.Grid style={{ width: '100%', padding: 3 }}>
+            <StatisticsPanelIteration
+              cardCss={gridStyleStatisc}
+              statisticCss={statisticStyle}
+              csv={csv}>
+              <StatisticIteractionGraph
+                data={csv}
+                initialDateIndex={initialDateIndex}
+                lastDateIndex={lastDateIndex}
+              />
+            </StatisticsPanelIteration>
+          </Card.Grid>
+        </Card>
+      );
+
     default:
       return (
         <Card style={cardBody}>

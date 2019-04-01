@@ -111,6 +111,13 @@ export interface IDataInstalls {
   uninstalls: number;
   activations: number;
 }
+
+export interface IIteraction {
+  name: string;
+  interactionRate: number;
+  minimizations: number;
+  unminimizations: number;
+}
 export interface IStatistic {
   [key: string]: string | number;
   title: string;

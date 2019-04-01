@@ -9,7 +9,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Brush
 } from 'recharts';
 
 import { IDataBitsStatistic, ITwitchExtensionPrimitiveCSV } from './types';
@@ -45,6 +46,7 @@ export const StatisticBitsGraph = ({ data, initialDateIndex, lastDateIndex }: IP
   <Fragment>
     <ResponsiveContainer width='100%' aspect={2.0 / 1.0}>
       <ComposedChart data={makeData(data, initialDateIndex, lastDateIndex)}>
+        <Brush />
         <CartesianGrid stroke='#f5f5f5' />
         <XAxis dataKey='name' />
         <YAxis />

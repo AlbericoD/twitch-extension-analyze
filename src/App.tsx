@@ -155,32 +155,22 @@ class App extends Component<{}, IState> {
             </a>
           </div>
           <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']} onClick={this.handleClick}>
-            <Menu.Item
-              key='1'
-              style={{
-                background: '#6441a4',
-                border: '1px solid hsla(0,0%,100%,.09)'
-              }}>
+            <Menu.Item key='1'>
               <Icon type='dashboard' />
               <span>Overview</span>
             </Menu.Item>
-            <Menu.Item
-              key='2'
-              style={{
-                background: '#6441a4',
-                border: '1px solid hsla(0,0%,100%,.09)'
-              }}>
+            <Menu.Item key='2'>
               <Icon type='bar-chart' />
               <span>Installations Graph </span>
             </Menu.Item>
-            <Menu.Item
-              key='3'
-              style={{
-                background: '#6441a4',
-                border: '1px solid hsla(0,0%,100%,.09)'
-              }}>
+
+            <Menu.Item key='3'>
               <Icon type='line-chart' />
               <span>Monetization Graph</span>
+            </Menu.Item>
+            <Menu.Item key='4'>
+              <Icon type='area-chart' />
+              <span>Iteration Graph</span>
             </Menu.Item>
           </Menu>
         </Sider>

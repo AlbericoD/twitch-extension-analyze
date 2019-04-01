@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 export const cardBody: CSSProperties = {
   margin: 16,
   paddingTop: 10,
-  background: '#0f0e11',
+  // background: '#0f0e11',
   border: '1px solid hsla(0,0%,100%,.09)',
   boxShadow:
     '0 2px 4px -1px hsla(0,0%,100%,.05),0 2px 2px -2px hsla(0,0%,100%,.05),0 1px 4px 0 hsla(0,0%,100%,.05)'

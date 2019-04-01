@@ -7,7 +7,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Brush
 } from 'recharts';
 import { ITwitchExtensionPrimitiveCSV, IDataInstalls } from './types';
 
@@ -45,6 +46,7 @@ export const StatisticInstallGraph = ({
   <Fragment>
     <ResponsiveContainer width='100%' aspect={2.0 / 1.0}>
       <BarChart data={makeData(data, initialDateIndex, lastDateIndex)}>
+        <Brush />
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='name' />
         <YAxis />

@@ -74,3 +74,13 @@ th {
   padding: 30px 50px;
   margin: 250px 0;
 }
+.ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #6441a4 !important;
+}
+a {
+  color: #6441a4 !important;
+}
+.ant-card-grid {
+  padding: 12px !important;
+}
