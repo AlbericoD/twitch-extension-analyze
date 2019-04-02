@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import {
   ComposedChart,
   Line,
@@ -13,7 +13,7 @@ import {
   Brush
 } from 'recharts';
 
-import { IDataBitsStatistic, ITwitchExtensionPrimitiveCSV } from './types';
+import { IDataBitsStatistic, ITwitchExtensionPrimitiveCSV } from '../types';
 
 const makeData = (
   csv: ITwitchExtensionPrimitiveCSV[],

@@ -17,7 +17,6 @@ code {
 
 input[type='file'] {
   outline: 0;
-  /* opacity: 0; */
   pointer-events: none;
   user-select: none;
 }
@@ -31,7 +30,6 @@ input[type='file'] {
   text-align: center;
 }
 .label i {
-  /* display: block; */
   font-size: 42px;
   padding-bottom: 16px;
 }
@@ -64,7 +62,7 @@ th {
 
 .ant-layout-header,
 .ant-menu-dark {
-  background: #0f0e11 !important;
+  background: #ffffff !important;
 }
 .load-csv {
   text-align: center;
@@ -83,4 +81,27 @@ a {
 }
 .ant-card-grid {
   padding: 12px !important;
+}
+.ant-page-header {
+  color: #dad8de !important;
+  font-size: 7px !important;
+  line-height: 1 !important;
+  padding: 12px 14px !important;
+}
+.ant-menu {
+  background: transparent !important;
+}
+.ant-layout-sider-trigger {
+  background: #6441a4 !important;
+}
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #6441a4 !important;
+  border-bottom: 2px solid #6441a4 !important;
+}
+.ant-spin {
+  color: #6441a4 !important;
+}
+.ant-spin-dot i {
+  background-color: #6441a4 !important;
 }

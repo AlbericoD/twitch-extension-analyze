@@ -14,7 +14,7 @@ import {
   ComposedChart,
   Bar
 } from 'recharts';
-import { ITwitchExtensionPrimitiveCSV, IIteraction } from './types';
+import { ITwitchExtensionPrimitiveCSV, IIteraction } from '../types';
 import { Row, Col } from 'antd';
 
 const makeData = (

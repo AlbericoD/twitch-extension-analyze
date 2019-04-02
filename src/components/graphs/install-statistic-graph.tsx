@@ -10,8 +10,7 @@ import {
   ResponsiveContainer,
   Brush
 } from 'recharts';
-import { ITwitchExtensionPrimitiveCSV, IDataInstalls } from './types';
-
+import { ITwitchExtensionPrimitiveCSV, IDataInstalls } from '../types';
 const makeData = (
   csv: ITwitchExtensionPrimitiveCSV[],
   initialDateIndex: number,
