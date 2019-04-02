@@ -13,39 +13,15 @@ import {
   Brush
 } from 'recharts';
 
-import { IDataBitsStatistic, ITwitchExtensionPrimitiveCSV } from '../types';
-
-const makeData = (
-  csv: ITwitchExtensionPrimitiveCSV[],
-  initialDateIndex: number,
-  lastDateIndex: number
-): IDataBitsStatistic[] => {
-  let data: IDataBitsStatistic[] = [];
-  csv.filter((item, index) => {
-    if (index >= lastDateIndex && index <= initialDateIndex) {
-      const bits: IDataBitsStatistic = {
-        name: item.Date,
-        USD: parseFloat(item['Bits Revenue USD']),
-        bitsUsed: parseFloat(item['Bits Used']),
-        transactions: parseFloat(item['Bits Transactions'])
-      };
-      data.push(bits);
-      return bits;
-    }
-  });
-  data.reverse();
-  return data;
-};
+import { IDataBitsStatistic } from '../types';
 
 interface IProps {
-  data: ITwitchExtensionPrimitiveCSV[];
-  initialDateIndex: number;
-  lastDateIndex: number;
+  data: IDataBitsStatistic[];
 }
-export const StatisticBitsGraph = ({ data, initialDateIndex, lastDateIndex }: IProps) => (
+export const StatisticBitsGraph = ({ data }: IProps) => (
   <Fragment>
     <ResponsiveContainer width='100%' aspect={2.0 / 1.0}>
-      <ComposedChart data={makeData(data, initialDateIndex, lastDateIndex)}>
+      <ComposedChart data={data}>
         <Brush />
         <CartesianGrid stroke='#f5f5f5' />
         <XAxis dataKey='name' />

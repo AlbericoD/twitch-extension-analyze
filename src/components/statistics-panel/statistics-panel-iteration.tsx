@@ -10,7 +10,7 @@ interface IProps {
 }
 export const StatisticsPanelIteration = ({ cardCss, statisticCss, csv, children }: IProps) => (
   <Row gutter={16}>
-    <Col span={12}>
+    <Col span={6}>
       <Card.Grid style={cardCss}>
         <Statistic
           title='Interaction Rate'
@@ -23,7 +23,20 @@ export const StatisticsPanelIteration = ({ cardCss, statisticCss, csv, children 
         />
       </Card.Grid>
     </Col>
-    <Col span={12}>
+    <Col span={6}>
+      <Card.Grid style={cardCss}>
+        <Statistic
+          valueStyle={{ color: '#b19dd8' }}
+          title='Clicks'
+          value={csv
+            .map((item: ITwitchExtensionPrimitiveCSV) => parseFloat(item.Clicks))
+            .reduce((prev, next) => prev + next, 0)}
+          precision={0}
+          style={statisticCss}
+        />
+      </Card.Grid>
+    </Col>
+    <Col span={6}>
       <Card.Grid style={cardCss}>
         <Statistic
           valueStyle={{ color: '#b19dd8' }}
@@ -31,7 +44,20 @@ export const StatisticsPanelIteration = ({ cardCss, statisticCss, csv, children 
           value={csv
             .map((item: ITwitchExtensionPrimitiveCSV) => parseFloat(item.Minimizations))
             .reduce((prev, next) => prev + next, 0)}
-          precision={4}
+          precision={0}
+          style={statisticCss}
+        />
+      </Card.Grid>
+    </Col>
+    <Col span={6}>
+      <Card.Grid style={cardCss}>
+        <Statistic
+          valueStyle={{ color: '#b19dd8' }}
+          title='Unminimizations'
+          value={csv
+            .map((item: ITwitchExtensionPrimitiveCSV) => parseFloat(item.Unminimizations))
+            .reduce((prev, next) => prev + next, 0)}
+          precision={0}
           style={statisticCss}
         />
       </Card.Grid>

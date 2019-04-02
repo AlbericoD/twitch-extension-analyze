@@ -1,12 +1,11 @@
 import React, { CSSProperties } from 'react';
 import { Card } from 'antd';
-import {
-  StatisticsTopPanel,
-  StatisticsPanelInstall,
-  StatisticsPanelBits
-} from '../components/statistics-panel';
-import { StatisticInstallGraph, StatisticBitsGraph } from '../components/graphs';
+import { StatisticsTopPanel } from '../components/statistics-panel';
 import { ITwitchExtensionPrimitiveCSV } from '../components/types';
+import { graphCardStyle } from '../components';
+
+import { MonetizationGraphBox } from './monetization-graph';
+import { InstallationsGraphBox } from './installations-graph';
 interface IProps {
   cardBody: CSSProperties;
   gridStyleStatisc: CSSProperties;
@@ -29,23 +28,27 @@ export const OverViewBox = ({
     <Card.Grid style={gridStyleStatisc}>
       <StatisticsTopPanel css={statisticStyle} value={csv[0]} />
     </Card.Grid>
+
     <Card.Grid style={gridStyle}>
-      <StatisticsPanelInstall cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticInstallGraph
-          data={csv}
-          initialDateIndex={initialDateIndex}
-          lastDateIndex={lastDateIndex}
-        />
-      </StatisticsPanelInstall>
+      <InstallationsGraphBox
+        csv={csv}
+        graphCardStyle={graphCardStyle}
+        gridStyleStatisc={gridStyleStatisc}
+        statisticStyle={statisticStyle}
+        initialDateIndex={initialDateIndex}
+        lastDateIndex={lastDateIndex}
+      />
     </Card.Grid>
+
     <Card.Grid style={gridStyle}>
-      <StatisticsPanelBits cardCss={gridStyleStatisc} statisticCss={statisticStyle} csv={csv}>
-        <StatisticBitsGraph
-          data={csv}
-          initialDateIndex={initialDateIndex}
-          lastDateIndex={lastDateIndex}
-        />
-      </StatisticsPanelBits>
+      <MonetizationGraphBox
+        csv={csv}
+        graphCardStyle={graphCardStyle}
+        gridStyleStatisc={gridStyleStatisc}
+        statisticStyle={statisticStyle}
+        initialDateIndex={initialDateIndex}
+        lastDateIndex={lastDateIndex}
+      />
     </Card.Grid>
   </Card>
 );
