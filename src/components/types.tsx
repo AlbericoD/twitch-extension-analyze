@@ -48,56 +48,6 @@ export interface ITwitchExtensionPrimitiveCSV {
   'Unique Bits Users Last 30 Days': string;
   'Bits Used Per User': string;
 }
-
-export interface ITwitchExtensionRealCSV {
-  Date: Date;
-  'Extension Name': string;
-  'Extension Client ID': string;
-  'Extension Details Page Visits': number;
-  'Unique Extension Details Page Visits': number;
-  Installs: number;
-  Uninstalls: number;
-  Activations: number;
-  'Unique Active Channels': number;
-  'Unique Active Channels Last 7 Days': number;
-  'Unique Active Channels Last 30 Days': number;
-  'Unique Identity Links': number;
-  'Unique Identity Unlinks': number;
-  Renders: number;
-  'Unique Renderers': number;
-  'Unique Renderers Last 7 Days': number;
-  'Unique Renderers Last 30 Days': number;
-  Views: number;
-  'Unique Viewers': number;
-  'Unique Viewers Last 7 Days': number;
-  'Unique Viewers Last 30 Days': number;
-  Mouseenters: number;
-  'Unique Mouseenters': number;
-  'Unique Mouseenters Last 7 Days': number;
-  'Unique Mouseenters Last 30 Days': number;
-  'Mouseenters per Viewer': number;
-  'Mouseenter Rate': number;
-  Clicks: number;
-  'Unique Interactors': number;
-  'Unique Interactors Last 7 Days': number;
-  'Unique Interactors Last 30 Days': number;
-  'Clicks Per Interactor': number;
-  'Interaction Rate': number;
-  Minimizations: number;
-  'Unique Minimizers': string;
-  'Minimization Rate': number;
-  Unminimizations: number;
-  'Unique Unminimizers': number;
-  'Unminimization Rate': number;
-  'Bits Revenue USD': number;
-  'Bits Used': number;
-  'Bits Transactions': number;
-  'Bits Per Transaction': number;
-  'Unique Bits Users': number;
-  'Unique Bits Users Last 7 Days': number;
-  'Unique Bits Users Last 30 Days': number;
-  'Bits Used Per User': number;
-}
 export interface IDataBitsStatistic {
   name: string;
   bitsUsed: number;

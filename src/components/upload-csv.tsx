@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Icon } from 'antd';
+import { Input } from 'antd';
 
 interface IProps {
   handleFileChosen(event: any): void;

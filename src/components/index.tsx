@@ -1,5 +1,3 @@
-export * from './upload-csv';
+export * from './style';
 export * from './types';
-export * from './install-statistic-graph';
-export * from './content';
-export * from './bits-statistic-graph';
+export * from './upload-csv';

@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { Row, Col, Icon, Statistic } from 'antd';
-import { IStatistic, ITwitchExtensionPrimitiveCSV } from './types';
+import { IStatistic, ITwitchExtensionPrimitiveCSV } from '../types';
 
 interface IProps {
   css: CSSProperties;
