@@ -66,7 +66,6 @@ th {
 }
 .load-csv {
   text-align: center;
-  background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   margin-bottom: 20px;
   padding: 30px 50px;
@@ -91,7 +90,9 @@ a {
 .ant-menu {
   background: transparent !important;
 }
-.ant-layout-sider-trigger {
+.ant-layout-sider-trigger,
+.ant-calendar-selected-start-date .ant-calendar-date,
+.ant-calendar-selected-end-date .ant-calendar-date {
   background: #6441a4 !important;
 }
 .ant-menu-horizontal > .ant-menu-item-selected,
@@ -104,4 +105,30 @@ a {
 }
 .ant-spin-dot i {
   background-color: #6441a4 !important;
+}
+.ant-calendar-range .ant-calendar-in-range-cell:before {
+  background: rgba(154, 127, 204, 0.2) !important;
+}
+.ant-tag-blue {
+  color: #6441a4 !important;
+  background: rgba(154, 127, 204, 0.2) !important;
+  border-color: rgba(154, 127, 204, 0.7) !important;
+}
+.ant-calendar-today .ant-calendar-date {
+  color: #6441a4 !important;
+  border-color: rgba(154, 127, 204, 0.7) !important;
+}
+.ant-input:hover {
+  border-color: rgba(154, 127, 204, 0.7) !important;
+}
+.ant-calendar-date:hover {
+  background: rgba(154, 127, 204, 0.2) !important;
+}
+.ant-calendar-year-panel-selected-cell .ant-calendar-year-panel-year,
+.ant-calendar-decade-panel-selected-cell .ant-calendar-decade-panel-decade {
+  color: #fff !important;
+  background: rgb(154, 127, 204) !important;
+}
+.bits-icon__svg {
+  fill: rgb(154, 127, 204) !important;
 }
