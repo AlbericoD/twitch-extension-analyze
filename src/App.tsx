@@ -111,7 +111,7 @@ class App extends Component<{}, IState> {
         <Layout style={{ padding: '0 0 24px', marginBottom: 20 }}>
           <Header style={{ position: 'fixed', zIndex: 2, width: '100%' }}>
             <Top name={this.state.name}>
-              {csv !== null ? (
+              {csv !== null && menu !== 'activated' ? (
                 <PageHeader
                   title='Graph Range Date'
                   subTitle={
@@ -128,9 +128,7 @@ class App extends Component<{}, IState> {
                     />
                   }
                 />
-              ) : (
-                'Graph Range Date'
-              )}
+              ) : null}
             </Top>
           </Header>
           <Content style={{ width: '100%', minHeight: '70vh', marginTop: 60 }}>
