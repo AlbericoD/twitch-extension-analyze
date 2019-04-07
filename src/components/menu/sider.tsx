@@ -38,6 +38,11 @@ const options: IOptions[] = [
     key: 'iteraction',
     icon: 'area-chart',
     name: 'Iteration Graph'
+  },
+  {
+    key: 'activated',
+    icon: 'table',
+    name: 'Live Activated Channels'
   }
 ];
 

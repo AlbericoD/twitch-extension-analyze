@@ -13,6 +13,7 @@ import { OverViewBox } from './overview';
 import { InstallationsGraphBox } from './installations-graph';
 import { MonetizationGraphBox } from './monetization-graph';
 import { InterationGraphBox } from './interation-graph';
+import { LiveActivatedChannelsBox } from './live-activated-channels';
 import { Empty, PageHeader } from 'antd';
 import { ImportTwitchCSV } from '../components';
 
@@ -91,7 +92,15 @@ const panels = ({
           csv={csv}
         />
       );
-
+    case 'activated':
+      return (
+        <LiveActivatedChannelsBox
+          graphCardStyle={graphCardStyle}
+          gridStyleStatisc={gridStyleStatisc}
+          statisticStyle={statisticStyle}
+          clientID={csv[0]['Extension Client ID']}
+        />
+      );
     default:
       return (
         <Empty
