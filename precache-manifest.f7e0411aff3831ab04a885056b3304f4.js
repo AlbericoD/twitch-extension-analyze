@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/twitch-extension-analyze/static/js/runtime~main.645e04e5.js"
   },
   {
-    "revision": "44b9aa4af80b08cdc91c",
-    "url": "/twitch-extension-analyze/static/js/main.686d3ca3.chunk.js"
+    "revision": "3fddbaf1949ced1ecdf1",
+    "url": "/twitch-extension-analyze/static/js/main.931a896b.chunk.js"
   },
   {
     "revision": "912607a6710807aa4ef2",
     "url": "/twitch-extension-analyze/static/js/2.20dd4eb7.chunk.js"
   },
   {
-    "revision": "44b9aa4af80b08cdc91c",
+    "revision": "3fddbaf1949ced1ecdf1",
     "url": "/twitch-extension-analyze/static/css/main.beb15b4d.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/twitch-extension-analyze/static/css/2.057f1516.chunk.css"
   },
   {
-    "revision": "03ca3642f47dae70ccf6aad5825ca04c",
+    "revision": "4e07c6b50bb0238efcadbb5c00250c47",
     "url": "/twitch-extension-analyze/index.html"
   }
 ];
