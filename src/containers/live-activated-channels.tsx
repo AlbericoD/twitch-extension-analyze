@@ -4,8 +4,6 @@ import { useAsyncEffect } from '../utils';
 import { ChannelsList } from '../components';
 import { StatisticsPanelLive } from '../components/statistics-panel';
 import moment from 'moment';
-const uri =
-  'https://api.twitch.tv/extensions/hecb122wgtrzumrv9ywwjn7wg6nglq/live_activated_channels';
 interface IProps {
   clientID: string;
   gridStyleStatisc: CSSProperties;
@@ -24,6 +22,7 @@ const getLiveChannels = (clientID: string): Promise<IChannels[]> => {
   const headers = new Headers({
     'Client-ID': clientID
   });
+  const uri = `https://api.twitch.tv/extensions/${clientID}/live_activated_channels`;
   return fetch(uri, { headers })
     .then((res: Response) => {
       if (res.ok) return res;
