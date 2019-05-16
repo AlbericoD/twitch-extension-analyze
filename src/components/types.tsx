@@ -1,3 +1,51 @@
+export type CSVkey =
+  | 'Date'
+  | 'Extension Name'
+  | 'Extension Client ID'
+  | 'Extension Details Page Visits'
+  | 'Unique Extension Details Page Visits'
+  | 'Installs'
+  | 'Uninstalls'
+  | 'Activations'
+  | 'Unique Active Channels'
+  | 'Unique Active Channels Last 7 Days'
+  | 'Unique Active Channels Last 30 Days'
+  | 'Unique Identity Links'
+  | 'Unique Identity Unlinks'
+  | 'Renders'
+  | 'Unique Renderers'
+  | 'Unique Renderers Last 7 Days'
+  | 'Unique Renderers Last 30 Days'
+  | 'Views'
+  | 'Unique Viewers'
+  | 'Unique Viewers Last 7 Days'
+  | 'Unique Viewers Last 30 Days'
+  | 'Mouseenters'
+  | 'Unique Mouseenters'
+  | 'Unique Mouseenters Last 7 Days'
+  | 'Unique Mouseenters Last 30 Days'
+  | 'Mouseenters Per Viewer'
+  | 'Mouseenter Rate'
+  | 'Clicks'
+  | 'Unique Interactors'
+  | 'Unique Interactors Last 7 Days'
+  | 'Unique Interactors Last 30 Days'
+  | 'Clicks Per Interactor'
+  | 'Interaction Rate'
+  | 'Minimizations'
+  | 'Unique Minimizers'
+  | 'Minimization Rate'
+  | 'Unminimizations'
+  | 'Unique Unminimizers'
+  | 'Unminimization Rate'
+  | 'Bits Revenue USD'
+  | 'Bits Used'
+  | 'Bits Transactions'
+  | 'Bits Per Transaction'
+  | 'Unique Bits Users'
+  | 'Unique Bits Users Last 7 Days'
+  | 'Unique Bits Users Last 30 Days'
+  | 'Bits Used Per User';
 export interface ITwitchExtensionPrimitiveCSV {
   [key: string]: string | number;
   Date: string;
@@ -25,7 +73,7 @@ export interface ITwitchExtensionPrimitiveCSV {
   'Unique Mouseenters': string;
   'Unique Mouseenters Last 7 Days': string;
   'Unique Mouseenters Last 30 Days': string;
-  'Mouseenters per Viewer': string;
+  'Mouseenters Per Viewer': string;
   'Mouseenter Rate': string;
   Clicks: string;
   'Unique Interactors': string;
@@ -48,6 +96,7 @@ export interface ITwitchExtensionPrimitiveCSV {
   'Unique Bits Users Last 30 Days': string;
   'Bits Used Per User': string;
 }
+
 export interface IDataBitsStatistic {
   name: string;
   bitsUsed: number;

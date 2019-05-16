@@ -1,0 +1,27 @@
+label#largeFile:after {
+  position: absolute;
+  width: 60%;
+  max-width: 80vw;
+  content: 'Upload your file  CSV';
+  left: 0;
+  right: 0;
+  margin: 50px auto;
+  text-align: center;
+  padding: 50px 0px 50px 0px;
+  border-radius: 10px;
+  border: 5px dashed #ccc;
+  color: #ccc;
+  font-family: 'Helvetica Neue', Helvetica, Arial;
+  font-size: 30px;
+}
+
+label#largeFile:hover:after {
+  background: #ccc;
+  color: #fff;
+  cursor: pointer;
+}
+
+label#largeFile input#file {
+  width: 0px;
+  height: 0px;
+}

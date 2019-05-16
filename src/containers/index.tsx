@@ -1,6 +1,3 @@
 export * from './overview';
-export * from './installations-graph';
-export * from './interation-graph';
-export * from './monetization-graph';
-export * from './content';
 export * from './live-activated-channels';
+export * from './upload';
