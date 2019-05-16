@@ -85,11 +85,11 @@ const makeContent = (data: IInteractionGraphs): ITabsContent[] => [
     title: 'Stacked Area',
     content: (
       <GraphStackedArea
-        data={data.line}
-        firtArea='clicksPerInteractor'
-        secondArea='bitsTransactions'
-        thirdArea='bitsUsed'
-        fourthArea='uniqueMinimizations'
+        data={data.composed}
+        firtArea=''
+        secondArea='interactionRate'
+        thirdArea='minimizationRate'
+        fourthArea='unminimizationRate'
       />
     )
   }
