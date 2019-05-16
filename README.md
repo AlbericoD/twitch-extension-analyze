@@ -4,31 +4,11 @@ Online Version [Here](https://albericod.github.io/twitch-extension-analyze/)
 
 # Preview
 
-![prev 0](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-0.png)
+![preview gif](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/preview.gif)
 
 ---
 
-![prev 1](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-1.png)
-
----
-
-![prev 2](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-2.png)
-
----
-
-![prev 3](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-3.png)
-
----
-
-![prev 4](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-4.png)
-
----
-
-![prev 5](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-5.png)
-
----
-
-![prev 6](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-6.png)
+![preview png](https://raw.githubusercontent.com/AlbericoD/twitch-extension-analyze/master/prev-b.png)
 
 ---
 

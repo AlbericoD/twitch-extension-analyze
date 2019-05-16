@@ -1,14 +1,13 @@
-import React, { FunctionComponent, useState, CSSProperties } from 'react';
-import { Card } from 'antd';
+import React, { lazy, Suspense, memo, NamedExoticComponent, useState } from 'react';
+import { Card, Skeleton } from 'antd';
 import { useAsyncEffect } from '../utils';
-import { ChannelsList } from '../components';
-import { StatisticsPanelLive } from '../components/statistics-panel';
-import moment from 'moment';
+import { ChannelsList, ITwitchExtensionPrimitiveCSV } from '../components';
+import { AppState } from '../store';
+import { connect } from 'react-redux';
+
+const TopRow = lazy(() => import('../components/top-row/live-actived-channels'));
 interface IProps {
-  clientID: string;
-  gridStyleStatisc: CSSProperties;
-  statisticStyle: CSSProperties;
-  graphCardStyle: CSSProperties;
+  csv: ITwitchExtensionPrimitiveCSV[] | null;
 }
 export interface IChannels {
   id: string;
@@ -31,7 +30,7 @@ const getLiveChannels = (clientID: string): Promise<IChannels[]> => {
     .then(res => res.json())
     .then((data: { channels: IChannels[] }) => data.channels)
     .catch(err => {
-      console.log(err.message);
+      console.error(err);
       throw new Error('Err to get streamer data');
     });
 };
@@ -40,28 +39,44 @@ const addkey = (data: IChannels[]): IChannels[] =>
     return { ...item, key: item.id };
   });
 
-export const LiveActivatedChannelsBox: FunctionComponent<IProps> = (props: IProps): JSX.Element => {
-  const [data, setState] = useState<IChannels[]>([]);
-  useAsyncEffect(async () => {
-    try {
-      const channels = await getLiveChannels(props.clientID);
-      setState(channels);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [props.clientID]);
+const LiveActivatedChannels: NamedExoticComponent<IProps> = memo(
+  (props): JSX.Element => {
+    const [data, setState] = useState<IChannels[]>([]);
+    useAsyncEffect(async () => {
+      try {
+        if (props.csv !== null && props.csv.length) {
+          const channels = await getLiveChannels(props.csv[0]['Extension Client ID']);
+          setState(channels);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }, [props.csv]);
 
-  return (
-    <Card style={props.graphCardStyle}>
-      <Card.Grid style={{ width: '100%', padding: 3 }}>
-        <StatisticsPanelLive
-          cardCss={props.gridStyleStatisc}
-          statisticCss={props.statisticStyle}
-          lastUpdate={moment().format('MMMM Do YYYY, h:mm:ss a')}
-          channels={data}>
+    return (
+      <>
+        <Suspense fallback={<Skeleton active />}>
+          <TopRow
+            totalChannels={data.length}
+            totalViewCount={data
+              .map((item: IChannels) => parseInt(item.view_count))
+              .reduce((prev, next) => prev + next, 0)}
+          />
+        </Suspense>
+        <Card bordered={true} bodyStyle={{ padding: 0 }} loading={!data.length}>
           <ChannelsList data={addkey(data)} />
-        </StatisticsPanelLive>
-      </Card.Grid>
-    </Card>
-  );
-};
+        </Card>
+      </>
+    );
+  }
+);
+
+const mapStateToProps = (state: AppState): IProps => ({
+  csv: state.csv.data
+});
+const LiveActivatedChannelsBox = connect(
+  mapStateToProps,
+  null
+)(LiveActivatedChannels);
+
+export default memo(() => <LiveActivatedChannelsBox />);
