@@ -10,6 +10,7 @@ const OverViewTab = React.lazy(() => import('./containers/overview'));
 const MonetizationTab = React.lazy(() => import('./containers/monetization'));
 const LiveActivedChannelsTab = React.lazy(() => import('./containers/live-activated-channels'));
 const InteractionTab = React.lazy(() => import('./containers/interaction'));
+const ManualBuildTab = React.lazy(() => import('./containers/manual-build-graph'));
 
 const App: FunctionComponent = (): JSX.Element => (
   <Provider store={store}>
@@ -19,10 +20,10 @@ const App: FunctionComponent = (): JSX.Element => (
           <GridContent>
             <Route exact path='/' component={Upload} />
             <Route path='/overview' component={OverViewTab} />
-            <Route path='/installations' component={() => <h1>installations</h1>} />
             <Route path='/monetization' component={MonetizationTab} />
             <Route path='/iteraction' component={InteractionTab} />
             <Route path='/activated' component={LiveActivedChannelsTab} />
+            <Route path='/build' component={ManualBuildTab} />
           </GridContent>
         </Suspense>
       </Basiclayout>

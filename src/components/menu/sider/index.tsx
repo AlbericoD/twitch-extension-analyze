@@ -34,22 +34,22 @@ const options: IOptions[] = [
     disable: false
   },
   {
-    key: 'activated',
-    icon: 'table',
-    name: 'Live Activated Channels',
-    disable: false
-  },
-  {
     key: 'iteraction',
     icon: 'area-chart',
     name: 'Iteration Graph',
     disable: false
   },
   {
-    key: 'installations',
-    icon: 'bar-chart',
-    name: 'Installations Graph ',
-    disable: true
+    key: 'build',
+    icon: 'build',
+    name: 'Manual Build Graph ',
+    disable: false
+  },
+  {
+    key: 'activated',
+    icon: 'table',
+    name: 'Live Activated Channels',
+    disable: false
   }
 ];
 
