@@ -52,15 +52,17 @@ export function manualBuildReducer(
 
       const data = csv
         .map(value => ({
-          ...value,
           date: moment(value.Date, 'YYYY/MM/DD').format('L'),
-          [property]: value[property]
+          [state.topRow[0].name]: value[state.topRow[0].name],
+          [state.topRow[1].name]: value[state.topRow[1].name],
+          [state.topRow[2].name]: value[state.topRow[2].name],
+          [state.topRow[3].name]: value[state.topRow[3].name]
         }))
         .reverse();
       return {
         ...state,
         topRow: [...topRow],
-        data: [...state.data, ...data]
+        data
       };
     case HANDLE_RANGE_PICKER:
       const { dataIndex } = action.payload;
