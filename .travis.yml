@@ -1,0 +1,30 @@
+language: node_js
+
+node_js:
+  - 'stable'
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    on_success: change # only if status change from fail to success
+    on_failure: always # if there is a fail
+    recipients:
+      - a.diasbarreto@icloud.com
+      - albericodiasbarretofilho@gmail.com
+
+script:
+  - yarn test
+  - yarn build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  local_dir: build
+  on:
+    branch: master

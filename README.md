@@ -1,6 +1,8 @@
 Download Extension CSV [Extension Developer Analytics (Beta)](https://dev.twitch.tv/docs/insights/#extension-developer-analytics-beta).
 
-Online Version [Here](https://albericod.github.io/twitch-extension-analyze/)
+- Online Version
+  [Here](https://albericod.github.io/twitch-extension-analyze/)
+- [![Build Status](https://travis-ci.org/AlbericoD/twitch-extension-analyze.svg?branch=master)](https://travis-ci.org/AlbericoD/twitch-extension-analyze)
 
 # Preview
 
