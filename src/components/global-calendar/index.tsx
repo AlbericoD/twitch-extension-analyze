@@ -1,5 +1,5 @@
 import React, { FunctionComponent, memo } from 'react';
-import { DatePicker } from 'antd';
+import { DatePicker, Spin } from 'antd';
 import { ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { AppState, dataChosen } from '../../store';
@@ -23,7 +23,7 @@ type Props = DispachProps & IStateToProps;
 const GlobalCalendar: FunctionComponent<Props> = ({ parseDateToIndex, data }) => (
   <>
     {data === null ? (
-      'loading'
+      <Spin tip='no data' />
     ) : (
       <div className={'analyzeExtraWrap'}>
         <RangePicker
@@ -33,7 +33,7 @@ const GlobalCalendar: FunctionComponent<Props> = ({ parseDateToIndex, data }) =>
           ]}
           ranges={makeRanges(data)}
           format={dateFormat}
-          size={'large'}
+          size={'default'}
           onChange={props => parseDateToIndex(props)}
           disabled={data === null || !data.length}
         />
