@@ -2,7 +2,7 @@ import React, { memo, NamedExoticComponent } from 'react';
 import { Row, Col, Tag, Statistic } from 'antd';
 import { ChartCard, MiniBar, MiniArea, MiniLine, Trend } from '../../charts';
 import { connect } from 'react-redux';
-import { AppState, ITopRowMonetization } from '../../../store';
+import { AppState, ITopRowInteraction } from '../../../store';
 
 const topColResponsiveProps = {
   xs: 24,
@@ -18,9 +18,9 @@ interface MapStateToProps {
 // @albericod Right now, I was looking for a graph of Unique Rederers and/or Unique Viewers. (The number looks the same in my CSV).
 
 // I would also like some Mouseenters vs. Clicks information.
-type Props = MapStateToProps & ITopRowMonetization;
+type Props = MapStateToProps & ITopRowInteraction;
 const TopRow: NamedExoticComponent<Props> = memo(
-  ({ totalBitsUsed, bitsRevenue, bitsUsedPerUser, bitsUsers, loading }) => (
+  ({ uniqueRenderers, interactionRate, minimizationRate, unminimization, loading }) => (
     <Row gutter={24}>
       <Col {...topColResponsiveProps}>
         <ChartCard
@@ -32,18 +32,18 @@ const TopRow: NamedExoticComponent<Props> = memo(
                   <Tag color='purple'>Unique</Tag>Renderers
                 </>
               }
-              value={totalBitsUsed.bitsUsed}
+              value={uniqueRenderers.totalUniqueRenderes}
             />
           }>
           <div style={{ marginRight: 16 }}>
             <Trend flag='up'>
               Unique Viewers
-              <span className={'trendText'}>{totalBitsUsed.bitsTransactions}</span>
+              <span className={'trendText'}>{uniqueRenderers.uniqueViewers}</span>
             </Trend>
             <br />
             <Trend flag='down'>
               Unique Minimizers
-              <span className={'trendText'}>{totalBitsUsed.bitsPerTransaction}</span>
+              <span className={'trendText'}>{uniqueRenderers.uniqueMinimizers}</span>
             </Trend>
           </div>
         </ChartCard>
@@ -59,11 +59,11 @@ const TopRow: NamedExoticComponent<Props> = memo(
                   <Tag color='magenta'>Rate</Tag>Interaction
                 </>
               }
-              value={bitsRevenue.total}
-              precision={2}
+              value={interactionRate.total}
+              precision={4}
             />
           }>
-          <MiniArea data={bitsRevenue.data} />
+          <MiniArea data={interactionRate.data} />
         </ChartCard>
       </Col>
       <Col {...topColResponsiveProps}>
@@ -76,10 +76,11 @@ const TopRow: NamedExoticComponent<Props> = memo(
                   <Tag color='magenta'>Rate</Tag>Minimization
                 </>
               }
-              value={bitsUsedPerUser.total}
+              value={minimizationRate.total}
+              precision={4}
             />
           }>
-          <MiniLine data={bitsUsedPerUser.data} />
+          <MiniLine data={minimizationRate.data} />
         </ChartCard>
       </Col>
       <Col {...topColResponsiveProps}>
@@ -92,10 +93,11 @@ const TopRow: NamedExoticComponent<Props> = memo(
                   <Tag color='magenta'>Rate</Tag>Unminimization
                 </>
               }
-              value={bitsUsers.total}
+              value={unminimization.total}
+              precision={4}
             />
           }>
-          <MiniBar data={bitsUsers.data} />
+          <MiniBar data={unminimization.data} />
         </ChartCard>
       </Col>
     </Row>
@@ -103,11 +105,11 @@ const TopRow: NamedExoticComponent<Props> = memo(
 );
 
 const mapStateToProps = (state: AppState): Props => ({
-  totalBitsUsed: state.monetization.topRow.totalBitsUsed,
-  bitsRevenue: state.monetization.topRow.bitsRevenue,
-  bitsUsedPerUser: state.monetization.topRow.bitsUsedPerUser,
-  bitsUsers: state.monetization.topRow.bitsUsers,
-  loading: state.overview.load
+  loading: state.interaction.load,
+  uniqueRenderers: state.interaction.topRow.uniqueRenderers,
+  interactionRate: state.interaction.topRow.interactionRate,
+  minimizationRate: state.interaction.topRow.minimizationRate,
+  unminimization: state.interaction.topRow.unminimization
 });
 
 export default connect(

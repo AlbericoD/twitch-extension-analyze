@@ -36,7 +36,7 @@ const options: IOptions[] = [
   {
     key: 'iteraction',
     icon: 'area-chart',
-    name: 'Iteration Graph',
+    name: 'Interaction Graph',
     disable: false
   },
   {

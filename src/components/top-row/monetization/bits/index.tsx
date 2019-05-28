@@ -104,7 +104,7 @@ const mapStateToProps = (state: AppState): Props => ({
   bitsRevenue: state.monetization.topRow.bitsRevenue,
   bitsUsedPerUser: state.monetization.topRow.bitsUsedPerUser,
   bitsUsers: state.monetization.topRow.bitsUsers,
-  loading: state.overview.load
+  loading: state.monetization.load
 });
 
 export default connect(
