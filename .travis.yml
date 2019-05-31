@@ -18,6 +18,7 @@ notifications:
 
 script:
   - yarn
+  - yarn test
   - yarn build
 
 deploy:
