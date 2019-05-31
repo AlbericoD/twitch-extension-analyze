@@ -17,7 +17,7 @@ notifications:
       - albericodiasbarretofilho@gmail.com
 
 env:
-  - REACT_APP_UC_GA: $REACT_APP_UC_GA
+  - REACT_APP_UC_GA: UA-137577287-1
 script:
   - yarn
   # - yarn test to able with more test
