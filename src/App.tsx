@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Basiclayout, GridContent, PageLoading } from './layout';
 import { HashRouter, Route } from 'react-router-dom';
 import { store } from './store';
+import { withTracker } from './utils';
 import './app.less';
 
 const Upload = React.lazy(() => import('./containers/upload'));
@@ -18,12 +19,12 @@ const App: FunctionComponent = (): JSX.Element => (
       <Basiclayout>
         <Suspense fallback={<PageLoading />}>
           <GridContent>
-            <Route exact path='/' component={Upload} />
-            <Route path='/overview' component={OverViewTab} />
-            <Route path='/monetization' component={MonetizationTab} />
-            <Route path='/iteraction' component={InteractionTab} />
-            <Route path='/activated' component={LiveActivedChannelsTab} />
-            <Route path='/build' component={ManualBuildTab} />
+            <Route exact path='/' component={withTracker(Upload)} />
+            <Route path='/overview' component={withTracker(OverViewTab)} />
+            <Route path='/monetization' component={withTracker(MonetizationTab)} />
+            <Route path='/iteraction' component={withTracker(InteractionTab)} />
+            <Route path='/activated' component={withTracker(LiveActivedChannelsTab)} />
+            <Route path='/build' component={withTracker(ManualBuildTab)} />
           </GridContent>
         </Suspense>
       </Basiclayout>
