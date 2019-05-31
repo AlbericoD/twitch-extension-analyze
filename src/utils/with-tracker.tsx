@@ -2,13 +2,8 @@ import React, { useEffect } from 'react';
 import ReactGA, { FieldsObject } from 'react-ga';
 import { RouteComponentProps } from 'react-router-dom';
 
-if (process.env.NODE_ENV === 'production') {
-  //@ts-ignore
-  ReactGA.initialize(process.env.REACT_APP_UC_GA | '');
-} else {
-  //@ts-ignore
-  ReactGA.initialize(process.env.REACT_APP_UC_GA | '', { testMode: true });
-}
+//@ts-ignore
+ReactGA.initialize('UA-137577287-1');
 export const withTracker = <P extends RouteComponentProps>(
   WrappedComponent: React.ComponentType<P>,
   options: FieldsObject = {}
