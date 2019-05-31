@@ -3,7 +3,7 @@ import ReactGA, { FieldsObject } from 'react-ga';
 import { RouteComponentProps } from 'react-router-dom';
 
 //@ts-ignore
-ReactGA.initialize('UA-137577287-1');
+ReactGA.initialize(process.env.REACT_APP_UC_GA);
 export const withTracker = <P extends RouteComponentProps>(
   WrappedComponent: React.ComponentType<P>,
   options: FieldsObject = {}

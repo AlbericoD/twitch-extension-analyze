@@ -16,9 +16,11 @@ notifications:
       - a.diasbarreto@icloud.com
       - albericodiasbarretofilho@gmail.com
 
+env:
+  - REACT_APP_UC_GA: $REACT_APP_UC_GA
 script:
   - yarn
-  - yarn test
+  # - yarn test to able with more test
   - yarn build
 
 deploy:
