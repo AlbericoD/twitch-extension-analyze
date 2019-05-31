@@ -17,6 +17,7 @@ notifications:
       - albericodiasbarretofilho@gmail.com
 
 script:
+  - yarn
   - yarn test
   - yarn build
 
