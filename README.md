@@ -2,9 +2,6 @@
   Twitch Extension Analyzer
 </h1>
 <div align="center" >
-<h2>
-CSV analyzer for twitch tv extensions.
-</h2>
 
 > Twitch Extension Analyzer is a platform hosted on github pages that assists in viewing analytical data provided by twitch tv
 
