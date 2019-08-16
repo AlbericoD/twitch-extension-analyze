@@ -1,13 +1,14 @@
-<h1 align="center" style="color:#FFF; background: #4C3772;">
+<h1 align="center">
   Twitch Extension Analyzer
 </h1>
+
+> CSV analyzer for twitch tv extensions.
+
 <div align="center" >
 
-<h2 style="color:#6447A4;"> CSV analyzer for twitch tv extensions.</h2>
+> Twitch Extension Analyzer is a platform hosted on github pages that assists in viewing analytical data provided by twitch tv
 
-> Twitch Extension Analyzer is a platform hosted on github pages >that assists in viewing analytical data provided by twitch tv
-
- <h2 style="color:#6447A4;">Insights & Analytics</h2>
+ <h2>Insights & Analytics</h2>
 
 > Twitch Insights provides game and extension developers with analytics data to help developers make data-driven decisions about future development. As a developer, you can use this data to enhance the experience of broadcasters and viewers and optimize how they engage with your games and extensions on Twitch
 > Read More
