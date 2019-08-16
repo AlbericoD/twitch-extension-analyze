@@ -9,7 +9,7 @@
 
 > Twitch Insights provides game and extension developers with analytics data to help developers make data-driven decisions about future development. As a developer, you can use this data to enhance the experience of broadcasters and viewers and optimize how they engage with your games and extensions on Twitch
 > Read More
-> [Here](https://albericod.github.io/twitch-extension-analyze/)
+> [Here](https://dev.twitch.tv/docs/insights/)
 
 [![Build Status](https://travis-ci.org/AlbericoD/twitch-extension-analyze.svg?branch=master)](https://travis-ci.org/AlbericoD/twitch-extension-analyze)
 [![GitHub issues](https://img.shields.io/github/issues/AlbericoD/twitch-extension-analyze.svg)](https://github.com/AlbericoD/twitch-extension-analyze/issues)
